@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sejuti Saha – Designer &amp; Front-End Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    fontFamily: { display: ['Fraunces', 'Georgia', 'serif'], body: ['Quicksand', 'system-ui', 'sans-serif'] },
+    colors: { bg: 'var(--bg)', lace: 'var(--lace)', petal: 'var(--petal)', ribbon: 'var(--ribbon)', rose: 'var(--rose)', ink: 'var(--ink)', soft: 'var(--soft)' }
+  } }
+}
+</script>
+<style>
+  :root {
+    --bg:#FFEEF3; --lace:#FFFaf8; --petal:#FAD3E0; --ribbon:#F2A0BE; --rose:#C94F7C; --ink:#5E2640; --soft:#8A5068;
+    box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#2B1824; --lace:#38202F; --petal:#4A2A3B; --ribbon:#E57AA3; --rose:#F7A6C2; --ink:#FCE6EE; --soft:#E0B6C8; }
+  }
+  :root[data-theme="dark"] { --bg:#2B1824; --lace:#38202F; --petal:#4A2A3B; --ribbon:#E57AA3; --rose:#F7A6C2; --ink:#FCE6EE; --soft:#E0B6C8; }
+  html { scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px); }
+  body { background:var(--bg); color:var(--ink); font-family:'Quicksand',system-ui,sans-serif; }
+  /* eyelet lace texture */
+  .eyelet { background-image:radial-gradient(circle at 12px 12px, var(--petal) 2.5px, transparent 3px); background-size:24px 24px; }
+  /* scalloped lace hem */
+  .hem { height:14px; background:radial-gradient(circle at 14px 0, var(--lace) 13px, transparent 14px) 0 0/28px 14px repeat-x; }
+  .hem-up { height:14px; background:radial-gradient(circle at 14px 14px, var(--lace) 13px, transparent 14px) 0 0/28px 14px repeat-x; }
+  /* stitched lace card */
+  .stitch { background:var(--lace); border:2px dashed var(--ribbon); box-shadow:0 0 0 6px var(--lace), 0 0 0 7px var(--petal); }
+  .ear { transform-origin:50% 100%; }
+  @keyframes perk { 0%{transform:rotate(0)} 30%{transform:rotate(-9deg)} 60%{transform:rotate(5deg)} 100%{transform:rotate(0)} }
+  .ear-l { animation:perk 1.4s .4s ease-out 1; }
+  .ear-r { animation:perk 1.4s .55s ease-out 1 reverse; }
+  @media (prefers-reduced-motion: reduce) { .ear-l,.ear-r { animation:none; } html{scroll-behavior:auto} }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--rose); outline-offset:3px; border-radius:12px; }
+</style>
+</head>
+<body class="font-body antialiased">
+
+<header class="sticky top-0 z-20 bg-lace/90 backdrop-blur" style="padding-top:env(safe-area-inset-top,0px)">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
+    <a href="#top" class="font-display text-xl italic text-rose">Sejuti Saha</a>
+    <ul class="flex gap-5 text-sm font-semibold text-soft">
+      <li><a class="hover:text-rose" href="#about">About</a></li>
+      <li><a class="hover:text-rose" href="#work">Work</a></li>
+      <li><a class="hover:text-rose" href="#skills">Skills</a></li>
+      <li><a class="hover:text-rose" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hem" aria-hidden="true" style="position:absolute;left:0;right:0;top:100%"></div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="eyelet">
+    <div class="mx-auto grid max-w-5xl items-center gap-10 px-5 pb-24 pt-20 md:grid-cols-[1.2fr_1fr]">
+      <div>
+        <p class="mb-4 inline-block rounded-full bg-petal px-4 py-1 text-sm font-semibold text-rose">Open to freelance projects</p>
+        <h1 class="font-display text-5xl font-medium leading-[1.05] sm:text-6xl">
+          I design soft, thoughtful websites that are a joy to hop through.
+        </h1>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-soft">
+          Hi, I’m Sejuti, a front-end developer and visual designer. I build gentle, accessible interfaces for small brands, creators and cozy online shops.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#work" class="rounded-full bg-rose px-6 py-3 font-semibold text-lace shadow-sm transition hover:brightness-110" style="color:var(--bg)">See my work</a>
+          <a href="#contact" class="rounded-full border-2 border-dashed border-ribbon bg-lace px-6 py-3 font-semibold text-rose transition hover:bg-petal">Say hello</a>
+        </div>
+      </div>
+
+      <!-- Bunny arch -->
+      <div class="relative mx-auto w-72 max-w-full" aria-hidden="true">
+        <svg viewBox="0 0 280 150" class="relative z-10 -mb-1 block w-full">
+          <g class="ear ear-l" style="transform-origin:95px 150px">
+            <ellipse cx="95" cy="78" rx="28" ry="70" fill="var(--lace)" stroke="var(--ribbon)" stroke-width="3"/>
+            <ellipse cx="95" cy="84" rx="14" ry="50" fill="var(--petal)"/>
+          </g>
+          <g class="ear ear-r" style="transform-origin:185px 150px">
+            <ellipse cx="185" cy="78" rx="28" ry="70" fill="var(--lace)" stroke="var(--ribbon)" stroke-width="3" transform="rotate(8 185 78)"/>
+            <ellipse cx="185" cy="84" rx="14" ry="50" fill="var(--petal)" transform="rotate(8 185 78)"/>
+          </g>
+        </svg>
+        <div class="stitch flex h-80 items-center justify-center rounded-t-[9rem] rounded-b-3xl">
+          <div class="text-center">
+            <div class="font-display text-8xl italic text-rose">ss</div>
+            <div class="mt-2 text-sm font-semibold text-soft">design &amp; code</div>
+            <svg viewBox="0 0 60 30" class="mx-auto mt-3 w-14"><path d="M30 15 C15 0 2 4 4 15 C2 26 15 30 30 15 C45 30 58 26 56 15 C58 4 45 0 30 15Z" fill="var(--ribbon)"/><circle cx="30" cy="15" r="4" fill="var(--rose)"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="hem-up" aria-hidden="true" style="background-color:transparent;margin-top:-14px;transform:scaleY(-1)"></div>
+
+  <!-- About -->
+  <section id="about" class="mx-auto max-w-5xl px-5 py-20">
+    <div class="stitch rounded-[2rem] p-8 md:p-12">
+      <h2 class="font-display text-3xl italic text-rose md:text-4xl">A little about me</h2>
+      <div class="mt-6 grid gap-8 md:grid-cols-2">
+        <p class="leading-loose text-soft">
+          I’ve spent five years turning sketchbook ideas into fast, accessible websites. I love pastel palettes, small details and layouts that feel like they were made by hand.
+        </p>
+        <p class="leading-loose text-soft">
+          Away from the screen you’ll find me embroidering, baking lemon cookies and sketching bunnies in the margins of every notebook I own.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="mx-auto max-w-5xl px-5 pb-20">
+    <h2 class="font-display text-3xl italic text-rose md:text-4xl">Selected work</h2>
+    <p class="mt-2 max-w-md text-soft">Three projects I’m proud of.</p>
+    <div class="mt-10 grid gap-8 md:grid-cols-3">
+      <article class="stitch overflow-hidden rounded-t-[6rem] rounded-b-2xl">
+        <div class="flex h-36 items-end justify-center bg-petal pb-3"><span class="font-display text-5xl italic text-rose">Petit Fleur</span></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl">Petit Fleur Florist</h3>
+          <p class="mt-2 text-sm leading-relaxed text-soft">An online flower shop with a bouquet builder and same-day delivery picker.</p>
+          <p class="mt-4 text-xs font-semibold text-rose">Tailwind CSS · Shopify</p>
+          <a href="#contact" class="mt-4 inline-block font-semibold text-rose underline decoration-ribbon decoration-2 underline-offset-4">View case study</a>
+        </div>
+      </article>
+      <article class="stitch overflow-hidden rounded-3xl">
+        <div class="flex h-36 items-center justify-center bg-ribbon/60"><span class="font-display text-4xl italic" style="color:var(--ink)">Cloud Nine</span></div>
+        <div class="p-6">
+          <h3 class="font-display text-xl">Cloud Nine Journal</h3>
+          <p class="mt-2 text-sm leading-relaxed text-soft">A mood and sleep journaling app with calm charts and a gentle reminder system.</p>
+          <p class="mt-4 text-xs font-semibold text-rose">React · Tailwind CSS</p>
+          <a href="#contact" class="mt-4 inline-block font-semibold text-rose underline decoration-ribbon decoration-2 underline-offset-4">View case study</a>
+        </div>
+      </article>
+      <article class="stitch overflow-hidden rounded-t-2xl rounded-b-[6rem]">
+        <div class="flex h-36 items-center justify-center bg-petal"><span class="font-display text-4xl italic text-rose">Honey &amp; Thread</span></div>
+        <div class="p-6 pb-12">
+          <h3 class="font-display text-xl">Honey &amp; Thread Studio</h3>
+          <p class="mt-2 text-sm leading-relaxed text-soft">Portfolio and class booking site for a hand-embroidery teacher.</p>
+          <p class="mt-4 text-xs font-semibold text-rose">HTML · Tailwind CSS</p>
+          <a href="#contact" class="mt-4 inline-block font-semibold text-rose underline decoration-ribbon decoration-2 underline-offset-4">View case study</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="eyelet">
+    <div class="mx-auto max-w-5xl px-5 py-20">
+      <h2 class="font-display text-3xl italic text-rose md:text-4xl">What I work with</h2>
+      <div class="mt-8 grid gap-8 md:grid-cols-3">
+        <div>
+          <h3 class="font-display text-xl">Design</h3>
+          <ul class="mt-4 flex flex-wrap gap-2 text-sm font-semibold">
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">Figma</li>
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">Branding</li>
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">Illustration</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-display text-xl">Build</h3>
+          <ul class="mt-4 flex flex-wrap gap-2 text-sm font-semibold">
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">HTML &amp; CSS</li>
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">Tailwind CSS</li>
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">JavaScript</li>
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">React</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-display text-xl">Care</h3>
+          <ul class="mt-4 flex flex-wrap gap-2 text-sm font-semibold">
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">Accessibility</li>
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">Performance</li>
+            <li class="rounded-full bg-lace px-4 py-1.5 text-rose ring-2 ring-ribbon/50">Clear communication</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="mx-auto max-w-3xl px-5 py-24 text-center">
+    <div class="stitch rounded-[2.5rem] px-6 py-12 md:px-12">
+      <h2 class="font-display text-4xl italic text-rose">Let’s make something sweet</h2>
+      <p class="mx-auto mt-4 max-w-md leading-relaxed text-soft">Have a project in mind? Tell me about it and I’ll reply within two working days.</p>
+      <a href="mailto:hello@hanabellamy.example" class="mt-8 inline-block rounded-full bg-rose px-8 py-3 font-semibold shadow-sm transition hover:brightness-110" style="color:var(--bg)">hello@sejutisahamy.gmail.com</a>
+      <ul class="mt-8 flex justify-center gap-6 text-sm font-semibold text-rose">
+        <li><a class="underline decoration-ribbon decoration-2 underline-offset-4" href="#top">Instagram</a></li>
+        <li><a class="underline decoration-ribbon decoration-2 underline-offset-4" href="#top">Dribbble</a></li>
+        <li><a class="underline decoration-ribbon decoration-2 underline-offset-4" href="#top">GitHub</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-lace">
+  <div class="hem" aria-hidden="true" style="background:radial-gradient(circle at 14px 14px, var(--bg) 13px, transparent 14px) 0 0/28px 14px repeat-x"></div>
+  <p class="px-5 py-8 text-center text-sm text-soft">Made with care and a lot of pink · © 2026 Sejuti sahamy</p>
+</footer>
+</body>
+</html>
